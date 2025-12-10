@@ -38,7 +38,7 @@ def wolfe_line_search(f, grad_f, x, p, fx, grad, c1=1e-4, c2=0.9, alpha_init=1.0
 # ====================================
 # Gradient-based optimizers with bounds
 # ====================================
-def AR_gradient_descent(f, grad_f, x0, args=(), tol=1e-6, max_iter=10, alpha=0.5, beta=0.8, c1=1e-4, bounds=None):
+def AR_gradient_descent(f, grad_f, x0, args=(), tol=1e-6, max_iter=1000, alpha=0.5, beta=0.8, c1=1e-4, bounds=None):
     x = np.array(x0, dtype=float)
     history = [x.copy()]
 
