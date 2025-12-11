@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-from optimizers import BFGS_strong_wolfe
+from src.optimizers import BFGS_strong_wolfe
 from data.process import t_k, v_k, model_function, objective_function, gradient_objective
 import numpy as np
 
