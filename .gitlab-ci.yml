@@ -3,9 +3,10 @@ image: ubuntu:24.04
 build-docs:
   script:
     # - export  # Useful for debugging variables.
-    - apt-get update && apt-get install -y curl unzip # build-essential curl unzip # texlive-full
+    - apt-get update && apt-get install -y python3 python3-pip curl unzip # build-essential curl unzip # texlive-full
     - bash <(curl -fsSL https://pixi.sh/install.sh)
     - export PATH="$HOME/.pixi/bin:$PATH"
+    - pip3 install jupyter
     - export BASE_URL="${CI_PAGES_URL}"
     - pixi install
     - pixi run myst -v
