@@ -1,16 +1,16 @@
 image: ubuntu:24.04
 
 build-docs:
-  script:
+    script:
     # - export  # Useful for debugging variables.
-    - apt-get update && apt-get install -y python3 python3-pip curl unzip # build-essential curl unzip # texlive-full
+    - apt-get update && apt-get install -y curl unzip # build-essential curl unzip # texlive-full
     - bash <(curl -fsSL https://pixi.sh/install.sh)
     - export PATH="$HOME/.pixi/bin:$PATH"
-    - pip3 install jupyter
     - export BASE_URL="${CI_PAGES_URL}"
     - pixi install
     - pixi run myst -v
-    - pixi run jupyter kernelspec list
+    # - pixi run jupyter kernelspec list
+
 
     # Due to the following issue, we need to set c.ServerApp.allow_root = True or we
     # will get a error "Jupyter server did not start"
